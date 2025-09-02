@@ -8,7 +8,7 @@ server.on("request", async (req, res) => {
 
   if (req.method === "GET") {
     res.end("Hello from CoAP server 🚀");
-  } else if (req.method === "POST") {
+  } else {
     try {
       // payload dari IoT (udah bentuk JSON string)
       const payload = req.payload?.toString();
@@ -30,9 +30,6 @@ server.on("request", async (req, res) => {
       res.code = "5.00"; // Internal Server Error
       res.end("Error forwarding data");
     }
-  } else {
-    res.code = "4.05"; // Method Not Allowed
-    res.end();
   }
 });
 
