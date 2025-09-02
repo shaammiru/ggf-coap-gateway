@@ -15,6 +15,6 @@ server.on("request", (req, res) => {
   }
 });
 
-server.listen(() => {
+server.listen(5683, "0.0.0.0", () => {
   console.log("✅ CoAP server listening on port 5683");
 });
